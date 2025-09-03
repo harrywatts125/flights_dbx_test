@@ -1,0 +1,16 @@
+resources:
+  pipelines:
+    flights_bundle_pipeline:
+      name: flights_bundle_pipeline
+      serverless: true
+      channel: "PREVIEW"
+      catalog: ${var.catalog}
+      schema: ${var.schema}
+      root_path: "."
+      libraries:
+        - glob:
+            include: transformations/**
+      environment:
+        dependencies:
+          - pyspark-data-sources
+      continuous: true
