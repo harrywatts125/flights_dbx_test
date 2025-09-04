@@ -1,0 +1,18 @@
+resources:
+  pipelines:
+    meter_bundle_pipeline:
+      name: meter_bundle_pipeline
+      serverless: true
+      channel: "PREVIEW"
+      catalog: ${var.catalog}
+      schema: ${var.schema}
+      root_path: "."
+      libraries:
+        - glob:
+            include: transformations/**
+        - glob:
+            include: utilities/**
+      environment:
+        dependencies:
+          - pyspark-data-sources
+      continuous: true

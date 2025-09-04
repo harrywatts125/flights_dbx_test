@@ -1,7 +1,7 @@
 # This is a Databricks asset bundle definition for flights_bundle.
 # See https://docs.databricks.com/dev-tools/bundles/index.html for documentation.
 bundle:
-  name: flights_bundle
+  name: test_bundle
   uuid: 7088513a-368e-41b0-94d8-2342e1d010b5
 
 include:
